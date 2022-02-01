@@ -7,3 +7,13 @@ A [deliberately vulnerable Go project](https://github.com/0c34/govwa) has been c
 
 ## Dependabot
 Dependabot was turned on manually within the [security tab](https://github.com/sam-pritchard-kidsloop/actions-security-test/security).
+
+## TODO
+
+- [x] CodeQL GitHub Actions for GoLang and JavaScript
+- [x] Dependabot
+- [ ] Container scanning
+- [ ] OpenSSF (GitHub - ossf/scorecard: Security Scorecards - Security health metrics for Open Source )
+- [ ] OWASP Zap scans (might need permission to scan something)
+- [ ] Investigate if these can be enforced on a global scale or need to be turned on per-repo - if so, we need to automate it with the API and a lambda or something
+- [ ] Investigate how we run for multiple languages and tech - is it one workflow per language/tech? It will fail the build if the language isn’t used and we want people to import our standard templates so they don’t have to do the work.
