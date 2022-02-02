@@ -5,8 +5,8 @@ on:
       - main
   pull_request:
 jobs:
-  build:
-    name: Build
+  trivy-repo:
+    name: Trivy-repo
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout code
@@ -25,4 +25,24 @@ jobs:
         uses: github/codeql-action/upload-sarif@v1
         if: always()
         with:
-          sarif_file: 'trivy-results.sarif'
+          sarif_file: 'trivy-results-repo.sarif'
+  trivy-iac:
+    name: Trivy-IaC
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Trivy vulnerability scanner in IaC mode
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'config'
+          hide-progress: false
+          format: 'table'
+          exit-code: '1'
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: 'trivy-results-iac.sarif'
+  
