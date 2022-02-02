@@ -19,7 +19,7 @@ jobs:
           ignore-unfixed: true
           format: 'template'
           template: '@/contrib/sarif.tpl'
-          output: 'trivy-results.sarif'
+          output: 'trivy-results-repo.sarif'
 
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v1
@@ -40,6 +40,7 @@ jobs:
           hide-progress: false
           format: 'table'
           exit-code: '1'
+          output: 'trivy-results-iac.sarif'
 
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v1
