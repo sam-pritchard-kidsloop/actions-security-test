@@ -13,6 +13,7 @@ WORKDIR /app
 COPY go.mod .
 COPY go.sum .
 RUN go mod download
+RUN go get github.com/govwa/util/config
 
 # Copy the code into the container
 COPY . .
