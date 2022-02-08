@@ -1,13 +1,11 @@
 version: 2
 updates:
   - package-ecosystem: "gomod"
-    # Files stored in repository root
     directory: "/"
     schedule:
       interval: "daily"
 
   - package-ecosystem: "npm"
-    # Files stored in `app` directory
     directory: "/"
     schedule:
       interval: "daily"

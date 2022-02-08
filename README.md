@@ -12,8 +12,8 @@ Dependabot was turned on manually within the [security tab](https://github.com/s
 
 - [x] CodeQL GitHub Actions for GoLang and JavaScript
 - [x] Dependabot
-- [ ] Container scanning
-- [ ] OpenSSF (GitHub - ossf/scorecard: Security Scorecards - Security health metrics for Open Source )
+- [x] Container scanning
+- [x] OpenSSF (GitHub - ossf/scorecard: Security Scorecards - Security health metrics for Open Source )
 - [ ] Nuclei scans (might need permission to scan something)
 - [ ] OWASP Zap scans (might need permission to scan something)
 - [ ] Investigate if these can be enforced on a global scale or need to be turned on per-repo - if so, we need to automate it with the API and a lambda or something
