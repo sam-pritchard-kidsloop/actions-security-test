@@ -16,3 +16,4 @@ jobs:
           with:
             target: 'https://www.kidsloop.net/'
             cmd_options: '-a'
+            token: ${{ secrets.GITHUB_TOKEN }}
