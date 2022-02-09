@@ -1,0 +1,17 @@
+name: Zap Scan
+
+on:
+    schedule:
+      - cron: '0 7 * * 1'
+    workflow_dispatch:
+
+jobs:
+  zap-scan:
+      runs-on: ubuntu-latest
+      name: Scan ZAP website
+      steps:
+        - name: ZAP Scan
+          uses: zaproxy/action-baseline@v0.3.0
+          with:
+            target: 'https://www.kidsloop.net/'
+            cmd_options: '-a'

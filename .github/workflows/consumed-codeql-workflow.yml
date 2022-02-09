@@ -1,4 +1,4 @@
-name: "Consumed workflow"
+name: "Consumed CodeQL workflow"
 
 on:
   push:
@@ -11,6 +11,6 @@ on:
 
 jobs:
   call-reusable-codeql:
-    uses: sam-pritchard-kidsloop/reusable-workflows/.github/workflows/reusable-workflow.yml@main
+    uses: sam-pritchard-kidsloop/.github/workflows/reusable-codeql-workflow.yml@main
     with:
       language: 'go'
