@@ -3,7 +3,8 @@ name: Zap Scan
 on:
     schedule:
       - cron: '0 7 * * 1'
-    workflow_dispatch:
+    push:
+      branches: [ main ]
 
 jobs:
   zap-scan:
