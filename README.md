@@ -15,6 +15,6 @@ Dependabot was turned on manually within the [security tab](https://github.com/s
 - [x] Container scanning
 - [x] OpenSSF (GitHub - ossf/scorecard: Security Scorecards - Security health metrics for Open Source )
 - [x] Nuclei scans (might need permission to scan something)
-- [ ] OWASP Zap scans (might need permission to scan something)
+- [x] OWASP Zap scans (might need permission to scan something)
 - [ ] Investigate if these can be enforced on a global scale or need to be turned on per-repo - if so, we need to automate it with the API and a lambda or something
 - [ ] Investigate how we run for multiple languages and tech - is it one workflow per language/tech? It will fail the build if the language isn’t used and we want people to import our standard templates so they don’t have to do the work.
