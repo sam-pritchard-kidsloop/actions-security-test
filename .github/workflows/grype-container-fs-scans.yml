@@ -1,8 +1,16 @@
 name: Container Image CI
+permissions: read-all
+
 on: [push]
 jobs:
   build:
+    name: grype-container
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+      contents: read
+      security-events: write
+      
     steps:
       - uses: actions/checkout@v2
       - name: Build the Container image
