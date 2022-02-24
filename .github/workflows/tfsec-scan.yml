@@ -1,17 +1,21 @@
 name: tfsec
-permissions:
-  pull-requests: read
-  contents: read
-  security-events: write
+permissions: read-all
+
 on:
   push:
     branches:
       - main
   pull_request:
+
 jobs:
   tfsec:
     name: tfsec sarif report
     runs-on: ubuntu-latest
+    
+    permissions:
+      pull-requests: read
+      contents: read
+      security-events: write
 
     steps:
       - name: Clone repo
