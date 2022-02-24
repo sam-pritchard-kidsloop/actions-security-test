@@ -1,4 +1,8 @@
 name: tfsec
+permissions:
+  pull-requests: read
+  contents: read
+  security-events: write
 on:
   push:
     branches:
