@@ -1,8 +1,13 @@
 on: [push]
+permissions: read-all
 jobs:
   checkov-job:
     runs-on: ubuntu-latest
     name: checkov-action
+    permissions:
+      pull-requests: read
+      contents: read
+      security-events: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@master
