@@ -1,4 +1,5 @@
 name: Nuclei - DAST Scan
+permissions: read-all
 
 on:
     schedule:
@@ -7,6 +8,10 @@ on:
 
 jobs:
   nuclei-scan:
+    name: nuclei-scan
+    permissions:
+        security-events: write
+        
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
