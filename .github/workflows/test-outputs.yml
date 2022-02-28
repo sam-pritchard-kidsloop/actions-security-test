@@ -1,0 +1,20 @@
+name: Test
+on:
+  push:
+    branches: [main]
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest  
+    steps:
+    - name: Create-output
+    - id: testing
+      run: |
+        echo `tail -n 50 changed-fields.out` >> output
+        echo `cat output`
+        echo "::set-output name=output::$(cat output)"
+    
+    - name: print-output 
+      steps:
+      - run: |
+        echo "${{ steps.cypresstest.output }}"
