@@ -15,6 +15,5 @@ jobs:
         echo "::set-output name=output::$(cat output)"
     
     - name: print-output 
-      steps:
-      - run: |
+    - run: |
         echo "${{ steps.cypresstest.output }}"
