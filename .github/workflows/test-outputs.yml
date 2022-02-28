@@ -9,10 +9,11 @@ jobs:
     steps:
     
     - name: Create-output
+      id: testing
       run: |
         echo "hello" >> test.out
         echo "::set-output name=output::$(cat test.out)"
         
     - name: print-output
       run: |
-        echo "${{ steps.cypresstest.output }}"
+        echo "${{ steps.testing.output }}"
