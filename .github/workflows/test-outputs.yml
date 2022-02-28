@@ -7,12 +7,12 @@ jobs:
   first-job:
     runs-on: ubuntu-latest  
     steps:
-    - name: Create-output
-    - id: testing
-      run: |
-        echo `tail -n 50 changed-fields.out` >> output
-        echo `cat output`
-        echo "::set-output name=output::$(cat output)"
     
-    - run: |
+    - name: Create-output
+      run: |
+        echo "hello" >> test.out
+        echo "::set-output name=output::$(cat test.out)"
+        
+    - name: print-output
+      run: |
         echo "${{ steps.cypresstest.output }}"
