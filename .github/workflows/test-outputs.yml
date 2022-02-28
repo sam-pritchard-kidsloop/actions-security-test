@@ -13,6 +13,7 @@ jobs:
       run: |
         echo "hello" >> test.out
         echo "::set-output name=output::$(cat test.out)"
+        echo $(cat test.out)
         
     - name: print-output
       run: |
